@@ -1,0 +1,447 @@
+[
+    {
+      "id": 1,
+      "name": "לימון",
+      "imageSrc": "../imges/לימון.jpg",
+      "category": "פרי",
+      "season": "winter",
+      "nutrition": {
+        "calories": 65,
+        "fiber": 1.6,
+        "sodium": 460,
+        "calcium": 58,
+        "iron": 1.67,
+        "vitaminC": 13,
+        "vitaminA": 23
+      }
+    },
+    {
+      "id": 2,
+      "name": "ארטישוק",
+      "imageSrc": "../imges/ארטישוק.jpg",
+      "category": "פרי",
+      "season": "winter",
+      "nutrition": {
+        "calories": 65,
+        "fiber": 1.6,
+        "sodium": 460,
+        "calcium": 58,
+        "iron": 1.67,
+        "vitaminC": 13,
+        "vitaminA": 23
+      }
+    },
+    {
+      "id": 3,
+      "name": "אבטיח",
+      "imageSrc": "../imges/אבטיח.jpg",
+      "category": "פרי",
+      "season": "קיץ",
+      "nutrition": {
+        "calories": 32,
+        "fiber": 0.4,
+        "sodium": 116,
+        "calcium": 8,
+        "iron": 0.17,
+        "vitaminC": 37,
+        "vitaminA": 9.6
+      }
+    },
+    {
+      "id": 4,
+      "name": "בצל ירוק",
+      "imageSrc": "../imges/בצל ירוק.jpg",
+      "category": "ירק",
+      "season": "כל השנה",
+      "nutrition": {
+        "calories": 40,
+        "fiber": 1.6,
+        "sodium": 276,
+        "calcium": 72,
+        "iron": 1.67,
+        "vitaminC": 19,
+        "vitaminA": 39
+      }
+    },
+    {
+      "id": 5,
+      "name": "ברוקולי",
+      "imageSrc": "../imges/ברוקולי.jpg",
+      "category": "ירק",
+      "season": "כל השנה",
+      "nutrition": {
+        "calories": 28,
+        "fiber": 1.6,
+        "sodium": 292,
+        "calcium": 46,
+        "iron": 1.67,
+        "vitaminC": 75,
+        "vitaminA": 139
+      }
+    },
+    {
+      "id": 6,
+      "name": "גזר",
+      "imageSrc": "../imges/גזר.jpg",
+      "category": "ירק",
+      "season": "חורף",
+      "nutrition": {
+        "calories": 29,
+        "fiber": 2.1,
+        "sodium": 194,
+        "calcium": 16,
+        "iron": 0.33,
+        "vitaminC": 5,
+        "vitaminA": 1688
+      }
+    },
+    {
+      "id": 7,
+      "name": "חסה",
+      "imageSrc": "../imges/חסה.jpg",
+      "category": "ירק",
+      "season": "כל השנה",
+      "nutrition": {
+        "calories": 65,
+        "fiber": 1.6,
+        "sodium": 460,
+        "calcium": 58,
+        "iron": 1.67,
+        "vitaminC": 13,
+        "vitaminA": 23
+      }
+    },
+    {
+      "id": 8,
+      "name": "חציל",
+      "imageSrc": "../imges/תציל2.jpg",
+      "category": "ירק",
+      "season": "קיץ",
+      "nutrition": {
+        "calories": 65,
+        "fiber": 1.6,
+        "sodium": 460,
+        "calcium": 58,
+        "iron": 1.67,
+        "vitaminC": 13,
+        "vitaminA": 23
+      }
+    },
+    {
+      "id": 9,
+      "name": "פלפל",
+      "imageSrc": "../imges/פלפל.jpg",
+      "category": "ירק",
+      "season": "קיץ",
+      "nutrition": {
+        "calories": 65,
+        "fiber": 1.6,
+        "sodium": 460,
+        "calcium": 58,
+        "iron": 1.67,
+        "vitaminC": 13,
+        "vitaminA": 23
+      }
+    }
+    ,
+{
+"id": 10,
+"name": "תפוח אדמה",
+"imageSrc": "../imges/תפוח_אדמה.jpg",
+"category": "ירק",
+"season": "סתיו",
+"nutrition": {
+"calories": 77,
+"fiber": 2.8,
+"sodium": 6,
+"calcium": 18,
+"iron": 2.2,
+"vitaminC": 20,
+"vitaminA": 0
+}
+},
+  {
+       "id": 11,
+        "name": "תפוח",
+        "imageSrc": "../imges/תפוח.jpg",
+        "category": "פרי",
+        "season": "סתיו",
+        "nutrition": {
+          "calories": 52,
+          "fiber": 2.4,
+          "sodium": 0,
+          "calcium": 1,
+          "iron": 0.12,
+          "vitaminC": 8,
+          "vitaminA": 0
+        }
+      },
+      {
+        "id": 12,
+        "name": "בננה",
+        "imageSrc": "../imges/בננה.jpg",
+        "category": "פרי",
+        "season": "כל השנה",
+        "nutrition": {
+          "calories": 105,
+          "fiber": 3.1,
+          "sodium": 1,
+          "calcium": 6,
+          "iron": 0.3,
+          "vitaminC": 10,
+          "vitaminA": 1
+        }
+      },
+      {
+        "id": 13,
+        "name": "תפוז",
+        "imageSrc": "../imges/תפוז.jpg",
+        "category": "פרי",
+        "season": "חורף",
+        "nutrition": {
+          "calories": 43,
+          "fiber": 2.3,
+          "sodium": 0,
+          "calcium": 4,
+          "iron": 0.1,
+          "vitaminC": 89,
+          "vitaminA": 34
+        }
+      },
+      {
+        "id": 14,
+        "name": "גזר סגול",
+        "imageSrc": "../imges/גזר_סגול.jpg",
+        "category": "ירק",
+        "season": "חורף",
+        "nutrition": {
+          "calories": 41,
+          "fiber": 2.8,
+          "sodium": 69,
+          "calcium": 3,
+          "iron": 0.3,
+          "vitaminC": 7,
+          "vitaminA": 3
+        }
+      },
+      {
+        "id": 15,
+        "name": "פטרוזיליה",
+        "imageSrc": "../imges/פטרוזיליה.jpg",
+        "category": "ירק",
+        "season": "כל השנה",
+        "nutrition": {
+          "calories": 36,
+          "fiber": 3.3,
+          "sodium": 5,
+          "calcium": 14,
+          "iron": 0.9,
+          "vitaminC": 133,
+          "vitaminA": 696
+        }
+      },
+      {
+        "id": 16,
+        "name": "חמוציות",
+        "imageSrc": "../imges/חמוציות.jpg",
+        "category": "ירק",
+        "season": "קיץ",
+        "nutrition": {
+          "calories": 19,
+          "fiber": 1.5,
+          "sodium": 34,
+          "calcium": 35,
+          "iron": 1.6,
+          "vitaminC": 10,
+          "vitaminA": 38
+        }
+      },
+      {
+        "id": 17,
+        "name": "כוסברה",
+        "imageSrc": "../imges/כוסברה.jpg",
+        "category": "ירק",
+        "season": "קיץ",
+        "nutrition": {
+          "calories": 13,
+          "fiber": 0.9,
+          "sodium": 2,
+          "calcium": 37,
+          "iron": 0.8,
+          "vitaminC": 43,
+          "vitaminA": 525
+        }
+      },
+      
+      {
+        "id": 19,
+        "name": "דלעת",
+        "imageSrc": "../imges/דלעת.jpg",
+        "category": "פרי",
+        "season": "סתיו",
+        "nutrition": {
+          "calories": 58,
+          "fiber": 3.3,
+          "sodium": 1,
+          "calcium": 18,
+          "iron": 1.2,
+          "vitaminC": 10,
+          "vitaminA": 6
+        }
+      },{
+        "id": 20,
+        "name": "תות שדה",
+        "imageSrc": "../imges/תות.jpg",
+        "category": "פרי",
+        "season": "אביב",
+        "nutrition": {
+          "calories": 32,
+          "fiber": 2,
+          "sodium": 1,
+          "calcium": 16,
+          "iron": 0.3,
+          "vitaminC": 58,
+          "vitaminA": 54
+        }
+      },
+      {
+        "id": 21,
+        "name": "אננס",
+        "imageSrc": "../imges/אננס.jpg",
+        "category": "פרי",
+        "season": "קיץ",
+        "nutrition": {
+          "calories": 52,
+          "fiber": 2.2,
+          "sodium": 1,
+          "calcium": 13,
+          "iron": 0.3,
+          "vitaminC": 79,
+          "vitaminA": 55
+        }
+      },
+      {
+        "id": 22,
+        "name": "מנגו",
+        "imageSrc": "../imges/מנגו.jpg",
+        "category": "פרי",
+        "season": "קיץ",
+        "nutrition": {
+          "calories": 158,
+          "fiber": 3.1,
+          "sodium": 1,
+          "calcium": 11,
+          "iron": 0.9,
+          "vitaminC": 60,
+          "vitaminA": 389
+        }
+      },
+      {
+        "id": 23,
+        "name": "אפרסק",
+        "imageSrc": "../imges/אפרסק.jpg",
+        "category": "פרי",
+        "season": "קיץ",
+        "nutrition": {
+          "calories": 39,
+          "fiber": 2.4,
+          "sodium": 0,
+          "calcium": 9,
+          "iron": 0.3,
+          "vitaminC": 10,
+          "vitaminA": 364
+        }
+      },
+      {
+        "id": 24,
+        "name": "תאנה",
+        "imageSrc": "../imges/תאנה.jpg",
+        "category": "פרי",
+        "season": "קיץ",
+        "nutrition": {
+          "calories": 74,
+          "fiber": 3.3,
+          "sodium": 1,
+          "calcium": 34,
+          "iron": 0.6,
+          "vitaminC": 2,
+          "vitaminA": 1
+        }
+      },{
+        "id": 26,
+        "name": "דובדבן",
+        "imageSrc": "../imges/דובדבן.jpg",
+        "category": "פרי",
+        "season": "אביב",
+        "nutrition": {
+          "calories": 50,
+          "fiber": 2,
+          "sodium": 1,
+          "calcium": 10,
+          "iron": 0.3,
+          "vitaminC": 10,
+          "vitaminA": 34
+        }
+      },
+      {
+        "id": 27,
+        "name": "משמש",
+        "imageSrc": "../imges/מישמש.jpg",
+        "category": "פרי",
+        "season": "קיץ",
+        "nutrition": {
+          "calories": 48,
+          "fiber": 2.1,
+          "sodium": 1,
+          "calcium": 15,
+          "iron": 0.4,
+          "vitaminC": 15,
+          "vitaminA": 364
+        }
+      }
+
+      ,
+        {
+          "id": 15,
+          "name": "עגבנייה",
+          "imageSrc": "../imges/עגבנייה.jpg",
+          "category": "ירק",
+          "season": "קיץ",
+          "nutrition": {
+            "calories": 18,
+            "fiber": 1.2,
+            "sodium": 2,
+            "calcium": 9,
+            "iron": 0.2,
+            "vitaminC": 24,
+            "vitaminA": 29
+          }
+        },
+        {
+          "id": 16,
+          "name": "קישוא",
+          "imageSrc": "../imges/קישוא.jpg",
+          "category": "ירק",
+          "season": "קיץ",
+          "nutrition": {
+            "calories": 15,
+            "fiber": 1.2,
+            "sodium": 2,
+            "calcium": 16,
+            "iron": 0.3,
+            "vitaminC": 14,
+            "vitaminA": 26
+          }
+        }
+      
+      
+      
+    ]
+    
+
+
+
+  
+  
+  
+
