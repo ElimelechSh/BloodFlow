@@ -1,307 +1,243 @@
-.header{
-    position: sticky;
-    top: 0;
-    z-index: 9;
-  }
-
-.center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.link{
-    text-decoration: none;
-    font-weight: bold;
-
-    transition: 1000ms;
-    color: brown;
-    text-decoration: none;
-    padding: 10px;
-}
-
-
-.link:hover{
-    transform: scale(1.2);
-    color: green;
-}
-.active{
-    color: white; 
-    transform: none !important;
-}
-
-.pstayle{
-    text-align: justify;
-    columns: 3;
-}
-
-.buttonWithMargin {
-    margin-right: 5px;
-    margin-bottom: 10px;
-  }
-.h2Froit{
-    width: 400px;
-    border-radius: 20px;
-    text-align: center;
-    margin: 0;
-}
-.imgFroit{
-    width: 400px;
-   
-}
-.text-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-     margin: 0;
-    text-align: center;
-    width: 200px;
-
-  } 
-
-  .image-container {
-    position: relative;
-    padding: 40px;
-  }
-  .imgF{
-    width: 800px;
-    height: 400px;
-   
-}
-  
-
-
-.image-containers {
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 20px;
-}
-
-
-.left img,
-.right img {
-    width: 80%; 
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    transition: filter 0.8s ease-out;
-}
-
-.left img:hover,
-.right img:hover {
-    filter: blur(0); 
-}
-
-.image-containers p {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    width: 80%; /* גודל יחסי של הטקסט לתמונה */
-    padding: 10px;
-    margin: 0;
-    opacity: 0; /* הטקסט מתחיל בכדי שלא יהיה נראה בהתחלה */
-    transition: opacity 0.8s ease-out;
-}
-
-.left:hover p,
-.right:hover p {
-    opacity: 1; /* הטקסט יתמלא כאשר העכבר מועבר מעל התמונה */
-}
-
-.left {
-    animation: slideInLeft 1s ease-out; /* אנימציה כניסה מימין */
-}
-
-.right {
-    animation: slideInRight 1s ease-out; /* אנימציה כניסה משמאל */
-}
-
-@keyframes slideInLeft {
-    from {
-        transform: translateX(100%);
-        filter: blur(8px); /* התמונה מתחילה עם אפקט מטושטש */
-    }
-    to {
-        transform: translateX(0);
-        filter: blur(0); /* התמונה מתפשטת לבהירות כאשר האנימציה מסתיימת */
-    }
-}
-
-@keyframes slideInRight {
-    from {
-        transform: translateX(-100%);
-        filter: blur(8px); /* התמונה מתחילה עם אפקט מטושטש */
-    }
-    to {
-        transform: translateX(0);
-        filter: blur(0); /* התמונה מתפשטת לבהירות כאשר האנימציה מסתיימת */
-    }
-
-   
-} 
-.font-montserrat {
-font-family: 'Montserrat', sans-serif;
-text-align: justify;
-
-}
-.imgFroit{
-    width: 250px;
-    height: 300px;
-   
-}
-.imgCrosel{
-height: 550px;
- border-radius: 20px;
+body {
  
 }
 
-.fw-semibold{
-    border-radius: 60px;
-    text-align: center;
-    
-  }
-  .products {
-    display: flex;
-    flex-wrap: wrap;
-  }
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 25px;
+}
+.arrButtons{
+  position: sticky;
+  top: 0;
+  z-index: 9;
+
+  background-color: rgba(19, 121, 152, 0.7);
+}
+
+
+.Logo{
+ width: 125px;
+  height: 50px;
+  justify-items:right;
+}
+
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items:center;
+/* flex-wrap: wrap;
+align-self: center; */
+margin:0 auto;
+
+}
+
+
+
+/*    Login  טפסי התחברות */
+.Auth-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  /* min-width: 350px; */
+  max-width: 400px;
+  max-height: 200px;
+}
+
+.Auth-form {
+  background: linear-gradient(45deg, #f9fbfc, #8aabed5e, #effefb29);
+
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  min-width: 400px;
+  min-height: 350px;
+}
+
+
+.Auth-form h3 {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.Auth-form .form-control {
+  border: 2px solid #3c5f8f;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.Auth-form .form-control:focus {
+  border-color: #6b9dc7;
+  box-shadow: 0 0 5px rgba(107, 157, 199, 0.5);
   
-  .prode {
-    flex: 1 0 25%;
-  }
-  /* שות  */
-  .fw-semibold{
-    border-radius: 60px;
-    text-align: center;
-    
-  }
-
-    .imgi{
-
-      width:100%;
-      height: 200px;
-      border-radius: 60px;
-      justify-content: center;
-      text-align: center;
-      margin:0;
-      padding: 10px;
-    }
-
-    .accordion-body{
-background-color:green;
-color: brown;
-    }
-  .accordion-button{
-      background-color:rgb(32, 222, 194);
-      color: brown;
-    }
-
-
-
-
-    iframe{
-border-radius: 15px;
 }
-.cit{
-border-radius: 60px; 
+
+.Auth-form button {
+  background-color: #6b9dc7;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.3s;
 }
-.cit:hover{
-color: brown;
-transform:rotate(5deg)
-}  
-.divacordion{
-    min-height: 950px;
+
+.Auth-form button:hover {
+  background-color: #3c5f8f;
+
 }
 
 
+/*  Home */
+
+.classHome{
+
+background: linear-gradient(45deg, #ecf2f4, #e4ebf9, #eafaf6);
+box-shadow: 0 4px 8px rgba(186, 184, 184, 0);
+
+}
+
+.classarrButtons{
+  position: sticky;
+  top: 0;
+ 
+
+}
 
 
+.WindowGalery{
+max-width: 800px;
+  display: flex;
+  
+flex-wrap: wrap;
 
-
-.yout{
-display: flex;
+gap :3em;
 justify-content: center;
-align-items: center;
-text-align: center;
-background-color: antiquewhite;
-position: sticky;
-top: 0;
-}
-
-iframe{
-border-radius: 15px;
-}
-iframe:hover{
-border-radius: 60px; 
-}
-.h2:hover{
-background-color: brown;
-transform:rotate(5deg)
-}  
-
-.h2Gallery{
-      color: rgb(25, 66, 25);
-      font-size: 20px;
-}
-.h2nemeGallery{
-    font-size: 24px;
-   
+width: 1200px;
 
 }
 
-.whatsapp{
-color: darkgreen;
-font-size:48px;
+.containerGulery{
+
+    /* background: radial-gradient(circle, rgba(255, 255, 255, 0) 90%, #f0f8ff 100%);
+    padding: 20px;
+    text-align: center; */
+    /* background-color: #f0f8ff; */
+    padding: 20px;
+    border-radius: 10px;
+    /* box-shadow: 0 0 20px 10px rgba(240, 248, 255, 0.8); צל דהוי מסביב */
+  
+  
+  background-color: rgba(0, 200, 255, 0.067);
+}
+
+
+
+/* .buttonFinish{
+
+  position: sticky;
+  bottom: 0;
+  background-color: rgba(52, 216, 216, 0.236);
+
+
+} */
+
+
+.col {
+  flex: 1; /* כל עמודה מקבלת חלק שווה מהשורה */
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.formPatishent{
+
+  max-height: 100px;
+
+  background: linear-gradient(45deg, #ceedf6, #537fd7, #43e8c4);
+
 
 }
 
-.instagram{
-color:brown;
-font-size:48px;
-}
-.youtube{
-color: darkred;
-font-size:48px;
-}
-.facebook{
-color: darkblue;
-font-size:48px;
+
+
+.buttonFinish{
+  width: 950px;
+
+  background-color: rgba(19, 121, 152, 0.7);
 }
 
-.ButtonB{
-padding: 12px;
-outline: none; 
-
-    }
-
-    .active2{
-        background-color:gray;
-    }
-    .arrow{
-        font-size:42px;
-        color: darkblue;
-    }
 
 
-.image-containerShaike {
-        position: relative;
-        width: 500px;
-        height: 350px;
-      }
-      
-.text-overlayShaike {
-        /* position: absolute;
-        top: 178%;
-        left: 38%; */
-        transform: translate(-35%, -1000%);
-        color:black;
-        text-align: center;
-      }
-      .imgFroitShaike{
-        width: 400px;
-       
-       
-    }      
+
+
+/* button */
+ /* עיצוב כפתור בסיסי */
+.button {
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* גרדיאנט צבעים משתלב */
+  color: white; /* צבע טקסט */
+  border: none; /* ללא גבולות */
+  border-radius: 50px; /* עיגול פינות */
+  padding: 15px 30px; /* גודל פנימי */
+  font-size: 18px; /* גודל טקסט */
+  font-weight: bold; /* טקסט מודגש */
+  cursor: pointer; /* סמן עכבר מתאים */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* צל כפתור */
+  transition: all 0.3s ease; /* אפקט מעבר */
+}
+
+/* אפקט מעבר עכבר */
+.button:hover {
+  transform: translateY(-3px); /* הרמה קלה */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* חיזוק צל */
+}
+
+/* אפקט לחיצה */
+.button:active {
+  transform: translateY(2px); /* הורדה קלה */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* הקטנת צל */
+}
+
+/* אנימציה במעבר */
+.button::after {
+  content: ""; /* אלמנט פנימי */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3); /* הבהרה קלה */
+  border-radius: 50px; /* מתאים לפינות הכפתור */
+  opacity: 0; /* מוסתר בתחילה */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* אפקט מעבר */
+  transform: scale(0.9); /* גודל מופחת */
+}
+
+.button:hover::after {
+  opacity: 1; /* מופיע בהדרגה */
+  transform: scale(1); /* גודל מלא */
+}
+
+
+
+
+
+.styled-frame {
+  border: 5px solid rgb(158, 205, 220); /* פס חיצוני עבה בצבע תכלת */
+  border-width: 5px 5px 3px 3px; /* שינוי עובי הפס כדי ליצור אפקט דינמי */
+  border-radius: 10px; /* פינות מעוגלות */
+  padding: 15px; /* מרחק פנימי בין המסגרת לתוכן */
+  background-color: #d9f5fa; /* רקע עדין */
+  /* box-shadow: 0 4px 10px rgba(11, 0, 0, 0.2);  */
+  box-shadow: 0 0 20px 10px rgba(240, 248, 255, 0.8); /* צל דהוי מסביב */
+  
+}

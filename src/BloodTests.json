@@ -1,0 +1,135 @@
+
+{
+  "categories": [
+    {
+      "category": "Hematology",
+      "tests": [
+        {
+          "name": "Hemoglobin",
+          "color": "red"
+        },
+        {
+          "name": "White Blood Cells",
+          "color": "white"
+        },
+        {
+          "name": "Platelets",
+          "color": "purple"
+        },
+        {
+          "name": "ESR",
+          "color": "orange"
+        }
+      ]
+    },
+    {
+      "category": "Biochimia",
+      "tests": [
+        {
+          "name": "Glucose",
+          "color": "gray"
+        },
+        {
+          "name": "Cholesterol",
+          "color": "yellow"
+        },
+        {
+          "name": "Iron",
+          "color": "brown"
+        },
+        {
+          "name": "Vitamin D",
+          "color": "green"
+        }
+      ]
+    },
+    {
+      "category": "Immunology",
+      "tests": [
+        {
+          "name": "CRP",
+          "color": "blue"
+        },
+        {
+          "name": "TSH",
+          "color": "pink"
+        }
+      ]
+    },
+    {
+      "category": "Endocrinology",
+      "tests": [
+        {
+          "name": "Cortisol",
+          "color": "yellow"
+        },
+        {
+          "name": "Thyroid Panel",
+          "color": "pink"
+        }
+      ]
+    },
+    {
+      "category": "Genetic",
+      "tests": [
+        {
+          "name": "BRCA1/BRCA2",
+          "color": "clear"
+        },
+        {
+          "name": "Karyotype",
+          "color": "clear"
+        }
+      ]
+    },
+    {
+      "category": "Infectious",
+      "tests": [
+        {
+          "name": "HIV",
+          "color": "red"
+        },
+        {
+          "name": "Hepatitis B",
+          "color": "yellow"
+        },
+        {
+          "name": "Hepatitis C",
+          "color": "yellow"
+        }
+      ]
+    },
+    {
+      "category": "Oncology",
+      "tests": [
+        {
+          "name": "Tumor Markers",
+          "color": "green"
+        },
+        {
+          "name": "CEA",
+          "color": "green"
+        }
+      ]
+    },
+    {
+      "category": "Metabolism",
+      "tests": [
+        {
+          "name": "Lipid Panel",
+          "color": "yellow"
+        },
+        {
+          "name": "Glucose Tolerance Test",
+          "color": "gray"
+        },
+        {
+          "name": "Insulin",
+          "color": "blue"
+        }
+      ]
+    }
+  ]
+}
+
+

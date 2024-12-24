@@ -1,76 +1,313 @@
-import React from 'react'
+// import React from 'react'
 
-import { NavLink } from 'react-router-dom';
-import {Container ,Navbar,Nav, Button} from 'react-bootstrap';
 
-import '../stayle/stayle.css'
+// import '../stayle/stayle.css'
+// // import Testhader from './cutegory/Testhader';
 
-const Header = (params) => {
 
+
+// const Header = ({ userName, userImage }) => {
+//   // קח את האות הראשונה של שם המשתמש
+//   const userInitial = userName ? userName.charAt(0).toUpperCase() : '?';
 
 
 
   
-  return (
-    <>
+//   return (
+//     <>
 
 
-<div class="container-fluid bg-primary-subtle h-25">
-
-<div class="d-flex justify-content-center">
-  <img width="150" height="120" src="../imges/logo_transparent.png" class="attachment-large size-large m-auto" alt="" loading="lazy" />
  
-</div>
 
-</div>
+// <div className="container-fluid bg-primary-subtle h-25">
 
+//     <div className="d-flex justify-content-between align-items-center border-bottom bg-primary-subtle h-25"
+    
+    
+    
+    
+//     >
+//       {/* לוגו */}
+//       <img
+//         width="50"
+//         height="50"
+//         src="../imges/logo_transparent.png"
+//         alt="Logo"
+//         className="m-2"
+//         loading="lazy"
+//       />
 
+//       {/* פרופיל משתמש */}
+//       <div className="d-flex align-items-center">
+//         {/* ברכה */}
+//         <span className="me-3 text-muted">שלום ל{userName}</span>
 
-
- <Navbar bg="secondary" expand="lg" className="header py-2" dir="rtl">
-    <Container fluid>
-      <Navbar.Brand href="/">
-        {params.title}
-      </Navbar.Brand>
-
-      <Navbar.Toggle aria-controls="navbar-nav" />
-      <Navbar.Collapse id="navbar-nav">
-        <Nav className="ms-auto">
-          <NavLink className="link nav-link mx-3" to="/">
-            בית
-          </NavLink>
-          <NavLink className="link nav-link mx-3" to="/Ubuot">
-            אודות
-          </NavLink>
-          <NavLink className="link nav-link mx-3" to="/Galery">
-            גלרית ירקות
-          </NavLink>
-          {/* <NavLink className="link nav-link mx-3" to="/products">
-            המוצרים שלנו
-          </NavLink> */}
-          <NavLink className="link nav-link mx-3" to="/Qewtshtion">
-            שו"ת
-          </NavLink>
-
-          <NavLink className="link nav-link mx-3" to="/from">
-            צור קשר
-          </NavLink>
-          
-        </Nav>
-     
-      </Navbar.Collapse>
-
+//         {/* תמונה או אות */}
+//         {userImage ? (
+//           <img
+//             src={userImage}
+//             alt="User Profile"
+//             className="rounded-circle"
+//             width="40"
+//             height="40"
+//           />
+//         ) : (
+//           <div
+//             className="userot rounded-circle bg-primary text-white d-flex justify-content-center align-items-center"
+//             style={{ width: '40px', height: '40px', }}
+//           >
+//             {userInitial}
+//           </div>
+//         )}
       
+    
 
-     
-      <Button className='p-2' href="" onClick={() => alert("אין לך איזור אישי")} >
-      
-  לאזור האישי
-</Button>
-    </Container>
-  </Navbar> 
-  </>
-  )
-}
+//       </div>
+//     </div>
+//     </div>
+ 
 
-export default Header
+
+
+
+
+//   </>
+//   )
+// }
+
+// export default Header
+
+
+
+// import React from 'react';
+
+// const Header = ({ patientDetails, doctorDetails }) => {
+//   const patientInitial = patientDetails?.name ? patientDetails.name.charAt(0).toUpperCase() : '?';
+//   const doctorInitial = doctorDetails?.name ? doctorDetails.name.charAt(0).toUpperCase() : '?';
+
+//   return (
+//     <div className="container-fluid bg-primary-subtle h-25">
+//       <div className="d-flex justify-content-between align-items-center border-bottom bg-primary-subtle h-25">
+//         {/* לוגו */}
+//         <img
+//           width="50"
+//           height="50"
+//           src="../imges/logo_transparent.png"
+//           alt="Logo"
+//           className="m-2"
+//           loading="lazy"
+//         />
+
+//         {/* פרטי הרופא */}
+//         <div className="d-flex align-items-center">
+//           <span className="me-3 text-muted">שלום ל{doctorDetails?.name || "רופא"}</span>
+//           <div
+//             className="userot rounded-circle bg-success text-white d-flex justify-content-center align-items-center"
+//             style={{ width: '40px', height: '40px' }}
+//           >
+//             {doctorInitial}
+//           </div>
+//         </div>
+
+//         {/* פרטי המטופל */}
+//         <div className="d-flex align-items-center">
+//           <span className="me-3 text-muted">מטופל: {patientDetails?.name || "לא נבחר"}</span>
+//           <div
+//             className="userot rounded-circle bg-primary text-white d-flex justify-content-center align-items-center"
+//             style={{ width: '40px', height: '40px' }}
+//           >
+//             {patientInitial}
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Header;
+
+
+
+
+
+
+// import React, { useContext } from "react";
+// import { SharedContext } from "../pages/ContextProvider";
+
+
+
+// const Header = () => {
+//   const { sharedValue } = useContext(SharedContext);
+
+//   return (
+
+// <h1>Value: {sharedValue}</h1>;
+
+//   );
+// };
+
+// export default Header;
+
+
+
+
+
+// import React, { useContext } from "react";
+// import { SharedContext } from "../pages/ContextProvider";
+
+// const Header = () => {
+//   const { patientDetails, doctorDetails } = useContext(SharedContext);
+
+//   const patientInitial = patientDetails?.name ? patientDetails.name.charAt(0).toUpperCase() : '?';
+//   const doctorInitial = doctorDetails?.name ? doctorDetails.name.charAt(0).toUpperCase() : '?';
+
+//   return (
+//     <div className="Haeder bg-primary-subtle ">
+//       <div className="d-flex justify-content-between align-items-center border-bottom bg-primary-subtle h-25">
+//         {/* לוגו */}
+//         <img
+//           width="50"
+//           height="50"
+//           src="../imges/logo_transparent.png"
+//           alt="Logo"
+//           className="m-2"
+//           loading="lazy"
+//         />
+
+//         {/* פרטי הרופא */}
+        // <div className="d-flex align-items-center w-100">
+        //   <span className="me-3 text-muted">שלום ל{doctorDetails?.name || "רופא"}</span>
+        //   <div
+        //     className="userot rounded-circle bg-success text-white d-flex justify-content-center align-items-center"
+        //     style={{ width: '40px', height: '40px' }}
+        //   >
+        //     {doctorInitial}
+        //   </div>
+        // </div>
+
+        // {/* פרטי המטופל */}
+        // <div className="d-flex align-items-center w-100">
+        //   <span className="me-3 text-muted">מטופל: {patientDetails?.name || "לא נבחר"}</span>
+        //   <div
+        //     className="userot rounded-circle bg-primary text-white d-flex justify-content-center align-items-center"
+        //     style={{ width: '40px', height: '40px' }}
+        //   >
+        //     {patientInitial}
+        //   </div>
+        // </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Header;
+
+
+
+
+
+
+
+// import React, { useContext } from "react";
+// import { SharedContext } from "../pages/ContextProvider";
+
+
+
+// const Header = () => {
+//   const { sharedValue } = useContext(SharedContext);
+//   const doctorInitial = sharedValue ? sharedValue.charAt(0).toUpperCase() : '?';
+//   const patientInitial = patientDetails?.name ? patientDetails.name.charAt(0).toUpperCase() : '?';
+//   return ( 
+//     <div> 
+//         <div>
+//             <div>
+
+
+
+// <div className="d-flex align-items-center w-100">
+//           <span className="me-3 text-muted">שלום ל{sharedValue || "רופא"}</span>
+//           <div
+//             className="userot rounded-circle bg-success text-white d-flex justify-content-center align-items-center"
+//             style={{ width: '40px', height: '40px' }}
+//           >
+//             {doctorInitial}
+//           </div>
+//         </div>
+
+// {/* פרטי המטופל */}
+// <div className="d-flex align-items-center w-100">
+//           <span className="me-3 text-muted">מטופל: {patientDetails?.name || "לא נבחר"}</span>
+//           <div
+//             className="userot rounded-circle bg-primary text-white d-flex justify-content-center align-items-center"
+//             style={{ width: '40px', height: '40px' }}
+//           >
+//             {patientInitial}
+//           </div>
+//         </div>
+
+
+
+
+
+//             </div>
+//         </div>
+//     </div>
+
+ 
+
+
+
+//    )
+// };
+// export default Header;
+
+
+
+
+
+// import React, { useContext } from "react";
+// import { SharedContext } from "../pages/MyProvider";
+
+// const Header = () => {
+//   const { sharedValue } = useContext(SharedContext);
+//   const { patientDetails } = useContext(SharedContext);
+
+//   // אם יש sharedValue (שם הרופא) נשתמש באות הראשונה
+//   const doctorInitial = sharedValue ? sharedValue.charAt(0).toUpperCase() : '?';
+  
+//   // אם יש פרטי מטופל, נשתמש באות הראשונה מהשם
+//   const patientInitial = patientDetails?.name ? patientDetails.name.charAt(0).toUpperCase() : '?';
+
+//   return ( 
+
+// <div> 
+// <div className="container-fluid bg-primary-subtle h-30">
+
+// <div className="d-flex justify-content-center p-2">
+
+
+
+    
+//       <div className="d-flex align-items-center w-50">
+//         <span className="me-3 text-muted">שלום ל{sharedValue || "רופא"}</span>
+//         <div className="userot rounded-circle bg-success text-white d-flex justify-content-center align-items-center" style={{ width: '40px', height: '40px' }}>
+//           {doctorInitial}
+//         </div>
+//       </div>
+
+//       {/* פרטי המטופל */}
+//       <div className="d-flex align-items-center w-50">
+//         <span className="me-3 text-muted">מטופל: {patientDetails?.name || "לא נבחר"}</span>
+//         <div className="userot rounded-circle bg-primary text-white d-flex justify-content-center align-items-center" style={{ width: '40px', height: '40px' }}>
+//           {patientInitial}
+//         </div>
+//       </div>
+//       </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Header;
+
+

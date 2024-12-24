@@ -2,7 +2,7 @@ import React from 'react'
 
 const Button = ({children,...propsl}) => {
   return (
-    <button className="ButtonB" {...propsl} >{children}</button>
+    <button className="Button" {...propsl} >{children}</button>
   )
 }
 
