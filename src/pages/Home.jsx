@@ -1,25 +1,18 @@
 
-import React ,{ useState, useContext } from 'react'
+import React  from 'react'
 import { FilePlus, ClipboardList } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
-import Tests from './Tests';
-
 
 
 const Home = () => {
   const navigate = useNavigate();
   return (
     <div className="container-fluid">
-      
-
 <div className='container p-10'>
 
-
 <div className=" classHome w-100%   text-center h-70 p-3 styled-frame">
-    {/* <h2 className='me-3 text-muted fs-3'>מערכת דיגיטלית להזמנת בדיקות דם מהמעבדה.</h2> */}
     <h1 className=" me-3 text-primary text-muted fs-3">ברוכים הבאים למערכת בדיקות הדם</h1>
    </div>
-
 
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full ">
@@ -50,12 +43,6 @@ const Home = () => {
         </button>
       </div>
     </div>
-
-
-
-
-
-
 
 </div>
     </div>

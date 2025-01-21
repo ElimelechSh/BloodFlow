@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { doApiMethod } from "../services/apiservice";
 
 const OrderLookup = () => {
   const [orderNumber, setOrderNumber] = useState("");
@@ -12,13 +13,12 @@ const OrderLookup = () => {
 
     try {
       // שליחת בקשה לשרת לבדוק את מצב ההזמנה
-      const response = await fetch(`/api/orders/${orderNumber}`);
-      const data = await response.json();
-
+      const response = await doApiMethod("/api/orders", "POST", {orderNumber});
+      console.log("response :",response)
       if (response.ok) {
         if (data.status === "incomplete") {
           // אם ההזמנה לא הושלמה, העבר לדף סריקת הברקודים
-          navigate("/SummaryPage", { state: data });
+          navigate("/SummaryPage", { state: response.data });
         } else {
           setError("ההזמנה כבר הושלמה או לא קיימת.");
         }
@@ -26,7 +26,7 @@ const OrderLookup = () => {
         setError(data.message || "שגיאה בבדיקת ההזמנה.");
       }
     } catch (err) {
-      setError("אירעה שגיאה בתקשורת עם השרת.");
+      setError(`אירעה שגיאה בתקשורת עם השרת. ${err}`,err);
     }
   };
 

@@ -6,19 +6,23 @@
       "tests": [
         {
           "name": "Hemoglobin",
-          "color": "red"
+          "color": "red",
+          "selectedColor": "white"
         },
         {
           "name": "White Blood Cells",
-          "color": "white"
+          "color": "white",
+          "selectedColor": "black"
         },
         {
           "name": "Platelets",
-          "color": "purple"
+          "color": "purple",
+          "selectedColor": "white"
         },
         {
           "name": "ESR",
-          "color": "orange"
+          "color": "orange",
+          "selectedColor": "white"
         }
       ]
     },
@@ -27,19 +31,23 @@
       "tests": [
         {
           "name": "Glucose",
-          "color": "gray"
+          "color": "gray",
+          "selectedColor": "white"
         },
         {
           "name": "Cholesterol",
-          "color": "yellow"
+          "color": "yellow",
+          "selectedColor": "white"
         },
         {
           "name": "Iron",
-          "color": "brown"
+          "color": "brown",
+          "selectedColor": "white"
         },
         {
           "name": "Vitamin D",
-          "color": "green"
+          "color": "green",
+          "selectedColor": "white"
         }
       ]
     },
