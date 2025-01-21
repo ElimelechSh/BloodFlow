@@ -6,9 +6,9 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Galery from './pages/Galery';
-import Patient_admission from './pages/Patient_admission';
+
 import SummaryPage from './pages/SummaryPage';
-import BarcodeScanner from './pages/BarcodeScanner';
+
 import SentToLab from './pages/SentToLab';
 
 import OrderLookup from './pages/OrderLookup';
@@ -33,7 +33,7 @@ function App() {
                 <Route path="/PatientDetails" element={<PatientDetails />}  />
                 <Route path="/Summary" element={<SummaryPage />}  />
                 <Route path="/SentToLab" element={<SentToLab />} />
-                <Route path="/BarcodeScanner" element={<BarcodeScanner />} />
+               
                 <Route path="/Galery" element={<Galery />} />
                 <Route path="/OrderLookup" element={<OrderLookup />} />
             </Route>

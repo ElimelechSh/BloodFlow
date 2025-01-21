@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import BloodTestsData from "../BloodTests.json"; // קובץ JSON של בדיקות דם
-import { doApiMethod } from "../services/apiservice"; // פונקציה לשימוש ב-API
+import BloodTestsData from "../BloodTests.json"; 
+import { doApiMethod } from "../services/apiservice"; 
 import Patient_admission from "./Patient_admission";
 import { useDataContext } from "./DataProvider";
 
 const Galery = () => {
-  const categories = BloodTestsData.categories; // נתוני קטגוריות מה-JSON
+  const categories = BloodTestsData.categories; 
   const [selectedTests, setSelectedTests] = useState([]); // מעקב אחר הבדיקות שנבחרו
-  const navigate = useNavigate(); // לשימוש בניווט לעמודי סיכום
+  const navigate = useNavigate(); 
   const   { dataFor4 }  = useDataContext();
   const [id, setId] = useState('');
-  const [patientData, setPatientData] = useState(null); // סטייט שמאוחסן באבא
+  const [patientData, setPatientData] = useState(null); 
   
   
   // שינוי מצב הבדיקה (נבחרה או לא)
@@ -37,7 +37,7 @@ const Galery = () => {
     return grouped;
   };
 
-  // רינדור כפתורי קטגוריות (לניווט לקטגוריה)
+  // (לניווט לקטגוריה)
   const renderCategoryButtons = () => {
     return categories.map((category, index) => (
       <button
@@ -88,15 +88,15 @@ const Galery = () => {
 
   // עיצוב הנתונים לשליחה לש
 
-  const formatDataForServer = (data, userId) => ({
-    tests: Object.keys(data).flatMap((color) =>
-      data[color].map((test) => ({
-        name: test, // שדה שם הבדיקה
-        attributes: [color], // צבע הבדיקה
-      }))
-    ),
-    user: { _id: userId }, // משתמש לדוגמה
-  });
+  // const formatDataForServer = (data, userId) => ({
+  //   tests: Object.keys(data).flatMap((color) =>
+  //     data[color].map((test) => ({
+  //       name: test, // שדה שם הבדיקה
+  //       attributes: [color], // צבע הבדיקה
+  //     }))
+  //   ),
+  //   user: { _id: userId }, // משתמש לדוגמה
+  // });
   
   const handleFinish = async () => {
     const results = {};

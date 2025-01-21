@@ -1,58 +1,6 @@
 
 
 
-// import React, { useContext } from "react";
-
-// import { Outlet } from "react-router-dom";
-
-// import { useDataContext } from "./DataProvider";
-// const ComponentB = () => {
-//   // const { value } = useContext(MyContext); // קבלת הערך מה-Context
-//   const { dataFor2 } = useDataContext();
-
-
-
-//   const doctorInitial = dataFor2 ? dataFor2.charAt(0).toUpperCase() : '?';
-//   console.log("dataFor2:",dataFor2)
-//   return (
-  
-//     <div className="header">
- 
-
-//      <div className="container-fluid bg-primary-subtle h-30 ">
-
-//        <div className="d-flex justify-content-center p-1  w-100 ">
-//        <img
-      
-//         src="../../public/imges/image-removebg-preview.png"
-//         alt="Logo"
-//         className="Logo "
-//         loading="lazy"
-//       />
-           
-//           <div className="d-flex align-items-center w-50  ">
-//              <span className="me-3 text-muted ">שלום ל{dataFor2 || "רופא"}</span>
-//          <div className="userot rounded-circle bg-success text-white d-flex justify-content-center align-items-center" style={{ width: '40px', height: '40px' }}>           
-//             {doctorInitial}
-//             </div>
-//          </div>
-
-//        </div>
-//     </div>
-
-//    <Outlet/>
-
-//     </div>
-
-
-
-//   );
-// };
-
-// export default ComponentB;
-
-
-
 
 import React, { useContext } from "react";
 
@@ -72,7 +20,7 @@ const ComponentB = () => {
   return (
     <div className="header">
       <div className="container-fluid bg-primary-subtle position-relative h-30">
-        {/* מטוס עם אנימציה */}
+      
         <div className="airplane-container">
           {/* <img
             src="../../public/imges/image-removebg-preview.png" // הקובץ שלך כאן
