@@ -12,9 +12,9 @@ import SummaryPage from './pages/SummaryPage';
 import SentToLab from './pages/SentToLab';
 
 import OrderLookup from './pages/OrderLookup';
-import ComponentB from './pages/ComponentB';
+import Header from './pages/Header';
 import { DataProvider } from './pages/DataProvider';
-import PatientDetails from './pages/PatientDetails';
+// import PatientDetails from './pages/PatientDetails';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
@@ -28,9 +28,10 @@ function App() {
 
           {/* protected routes */}
           <Route element={<ProtectedRoute />}>
-            <Route path="/" element={<ComponentB />} >
+            <Route path="/" element={<Header />} >
+            
                 <Route path="/Home" element={<Home />} />
-                <Route path="/PatientDetails" element={<PatientDetails />}  />
+                {/* <Route path="/PatientDetails" element={<PatientDetails />}  /> */}
                 <Route path="/Summary" element={<SummaryPage />}  />
                 <Route path="/SentToLab" element={<SentToLab />} />
                

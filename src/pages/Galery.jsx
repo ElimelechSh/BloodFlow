@@ -3,41 +3,15 @@ import { useNavigate } from "react-router-dom";
 import BloodTestsData from "../BloodTests.json"; 
 import { doApiMethod } from "../services/apiservice"; 
 import Patient_admission from "./Patient_admission";
-import { useDataContext } from "./DataProvider";
 
 const Galery = () => {
   const categories = BloodTestsData.categories; 
   const [selectedTests, setSelectedTests] = useState([]); // מעקב אחר הבדיקות שנבחרו
   const navigate = useNavigate(); 
-  const   { dataFor4 }  = useDataContext();
   const [id, setId] = useState('');
   const [patientData, setPatientData] = useState(null); 
-  
-  
-  // שינוי מצב הבדיקה (נבחרה או לא)
-  const toggleTestSelection = (testName) => {
-    setSelectedTests((prevSelected) =>
-      prevSelected.includes(testName)
-        ? prevSelected.filter((name) => name !== testName)
-        : [...prevSelected, testName]
-    );
-  };
 
-  // פונקציה לקיבוץ בדיקות לפי צבעים
-  const groupByColor = (data) => {
-    const grouped = {};
-    for (const category in data) {
-      data[category].forEach((test) => {
-        if (!grouped[test.color]) {
-          grouped[test.color] = [];
-        }
-        grouped[test.color].push(test.name);
-      });
-    }
-    return grouped;
-  };
-
-  // (לניווט לקטגוריה)
+  // (לניווט לקטגוריה) כפתורים 
   const renderCategoryButtons = () => {
     return categories.map((category, index) => (
       <button
@@ -53,24 +27,6 @@ const Galery = () => {
       </button>
     ));
   };
-
-  // רינדור בדיקות בתוך קטגוריה
-  const renderTests = (tests) => {
-    return tests.map((test) => (
-      <div
-        key={test.name}
-        onClick={() => toggleTestSelection(test.name)}
-        className="testbuttonG"
-        style={{
-          backgroundColor: selectedTests.includes(test.name)  ? "#ccc" : "#f9f9f9",
-          color: selectedTests.includes(test.name) ? "#fff" : "#000",
-        }}
-      >
-        {test.name}
-      </div>
-    ));
-  };
-
   // רינדור כל הקטגוריות
   const renderCategories = () => {
     return categories.map((category) => (
@@ -84,19 +40,47 @@ const Galery = () => {
         <div>{renderTests(category.tests)}</div>
       </div>
     ));
+  };  
+  // רשימת הבדיקות בתוך כל קטגוריה
+  const renderTests = (tests) => {
+    return tests.map((test) => (
+      <div
+        key={test.name}
+        onClick={() => toggleTestSelection(test.name)} // מסמן על בדיקות 
+        className="testbuttonG"
+        style={{
+          backgroundColor: selectedTests.includes(test.name)  ? "#ccc" : "#f9f9f9", 
+          color: selectedTests.includes(test.name) ? "#fff" : "#000",
+        }}
+      >
+        {test.name}
+      </div>
+    ));
+  };
+  // שינוי מצב הבדיקה (נבחרה או לא)
+  const toggleTestSelection = (testName) => {
+    setSelectedTests((prevSelected) =>
+      prevSelected.includes(testName)
+        ? prevSelected.filter((name) => name !== testName)
+        : [...prevSelected, testName]
+    );
   };
 
-  // עיצוב הנתונים לשליחה לש
 
-  // const formatDataForServer = (data, userId) => ({
-  //   tests: Object.keys(data).flatMap((color) =>
-  //     data[color].map((test) => ({
-  //       name: test, // שדה שם הבדיקה
-  //       attributes: [color], // צבע הבדיקה
-  //     }))
-  //   ),
-  //   user: { _id: userId }, // משתמש לדוגמה
-  // });
+
+  // פונקציה לקיבוץ בדיקות לפי צבעים
+  const groupByColor = (data) => {
+    const grouped = {};
+    for (const category in data) {
+      data[category].forEach((test) => {
+        if (!grouped[test.color]) {
+          grouped[test.color] = [];
+        }
+        grouped[test.color].push(test.name);
+      });
+    }
+    return grouped;
+  };
   
   const handleFinish = async () => {
     const results = {};
@@ -113,20 +97,23 @@ const Galery = () => {
       });
     });
   
-    const sortedByColor = groupByColor(results); // קיבוץ לפי צבעים
+  const sortedByColor = groupByColor(results); // קיבוץ לפי צבעים
     // יצירת מבנה הנתונים בפורמט הנדרש לשרת
     const formattedTests = Object.entries(sortedByColor).map(([color, tests]) => ({
-      name: `${color} Tests`, // שם כללי עבור קבוצת צבע
+      name: `${color}`, // שם כללי עבור קבוצת צבע
       attributes: tests, // רשימת הבדיקות באותו צבע
     }));
   
     const dataToSend = {
+      patientId: id, 
       tests: formattedTests,
-      patient: id, // TODO: החלף ב-ID של המטופל האמיתי
+     
     };
+    console.log("dataToSend ::",dataToSend)
     try {
       const response = await doApiMethod("/api/orders", "POST", dataToSend);
-      const orderNumber = response.data.order.orderNumber; // קיבלתי מספר הזמנה
+      console.log("response ::",response)
+      const orderNumber = response.data.orderNumber; // קיבלתי מספר הזמנה
       console.log("orderNumber",orderNumber)
             navigate("/summary", { state: { orderNumber } });
     } catch (error) {

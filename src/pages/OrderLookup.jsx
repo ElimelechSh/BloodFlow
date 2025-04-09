@@ -11,22 +11,14 @@ const OrderLookup = () => {
     e.preventDefault();
     setError(""); // איפוס שגיאות
 
+
+    
     try {
-      // שליחת בקשה לשרת לבדוק את מצב ההזמנה
-      const response = await doApiMethod("/api/orders", "POST", {orderNumber});
-      console.log("response :",response)
-      if (response.ok) {
-        if (data.status === "incomplete") {
-          // אם ההזמנה לא הושלמה, העבר לדף סריקת הברקודים
-          navigate("/SummaryPage", { state: response.data });
-        } else {
-          setError("ההזמנה כבר הושלמה או לא קיימת.");
-        }
-      } else {
-        setError(data.message || "שגיאה בבדיקת ההזמנה.");
-      }
+
+      navigate("/summary", { state: { orderNumber } });
+
     } catch (err) {
-      setError(`אירעה שגיאה בתקשורת עם השרת. ${err}`,err);
+      setError(`אירעה שגיאה בתקשורת עם השרת.`,err);
     }
   };
 

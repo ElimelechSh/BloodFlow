@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useDataContext } from "./DataProvider";
+import {  LogIn } from "lucide-react";
 
 
 const Login = () => {
@@ -15,9 +16,12 @@ const Login = () => {
   const onSubmit = async (e) => {
     e.preventDefault(); 
 
+
+      // const response = await doApiMethod("/api/users/login",  "POST",{
     try {
       const response = await axios.post("http://localhost:3007/api/users/login", {
-        email,
+        
+          email,
         password,
       });
 
@@ -38,16 +42,14 @@ const Login = () => {
 
   return (
   
-
 <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 ">
-
 <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md styled-frame">
   <div className="flex justify-center mb-8">
 
-
     <div className="bg-indigo-100 p-3 rounded-full">
-      <div className="w-8 h-8 text-indigo-600" />
-    
+      
+      <LogIn size={30} color="blue" />
+
     </div>
   </div>
   <h2 className="text-2xl font-bold text-center text-gray-800 mb-8  ">
@@ -94,5 +96,3 @@ const Login = () => {
 };
 
 export default Login;
-
-

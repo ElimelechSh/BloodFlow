@@ -334,4 +334,15 @@ width: 1200px;
 }
 
 
+.spinner {
+  border: 8px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-left-color: #09f;
+  animation: spin 1s linear infinite;
+}
 
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

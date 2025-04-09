@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import BarcodeScannerComponent from "react-qr-barcode-scanner";
 import { doApiMethod } from "../services/apiservice";
 import { useLocation, useNavigate } from "react-router-dom";
-import * as SUMMARY_STUB from "../stubs/SUMMARY_STUBS.json"
 
 const SummaryPage = () => {
   const [AllData, setOrderData] = useState(null);
@@ -13,25 +12,26 @@ const SummaryPage = () => {
   const navigate = useNavigate();
   const location = useLocation(); // לשימוש במידע מהדף הקודם
   const { orderNumber } = location.state || {}; // קבלת מספר ההזמנה מה-state
+console.log("orderNumber :",orderNumber)
 
-
-  const mockData = SUMMARY_STUB
   console.log("updatedTest11s@ :", AllData)
-  const handleScan = (barcode) => {
+  const handleScan = (tubeId) => {
     setLocalBarcodes((prev) => ({
       ...prev,
-      [currentColor]: barcode,
+      [currentColor]: tubeId,
     }));
     setScannedBarcode((prev) => ({
       ...prev,
-      [currentColor]: barcode,
+      [currentColor]: tubeId,
     }));
     setIsCameraOpen(false);
     playBeep();
   };
 
   const playBeep = () => {
-    const beep = new Audio("https://www.soundjay.com/button/beep-07.wav");
+    // const beep = new Audio("https://www.soundjay.com/button/beep-07.wav");
+    const beep = new Audio('/sounds/beep-07a.mp3'); // נתיב לקובץ האודיו שלך
+  
     beep.play();
   };
 
@@ -54,58 +54,75 @@ const SummaryPage = () => {
   useEffect(() => {
     const fetchOrderData = async () => {
       try {
-        const response = await doApiMethod("/api/orders", "POST", {orderNumber});
-        if (!response.ok) throw new Error("Failed to fetch order data");
+        const response = await doApiMethod(`/api/orders/${orderNumber}`, "GET");
+        console.log("response QQQ: ",response)
+        // if (!response.ok) throw new Error("Failed to fetch order data");
         setOrderData(response.data);
+
+        
       } catch (error) {
         console.error(error);
-        alert("Using local mock data due to server error.");
-        setOrderData(mockData);
+   
       }
+     
+      if(response){}
+
+
+
     };
 
     fetchOrderData();
   }, []);
 
+
   const handleSubmit = async () => {
     if (!AllData) return;
 
-    // const updatedTests = AllData.order.tests.map((test) => ({
-    //   ...test,
-    //   barcode: localBarcodes[test._id] || null,
-    // }));
+    const updatedTests = AllData.tests.map((test) => ({
+      ...test,
+      tubeId: localBarcodes[test.id] || null,
+    }));
     
+    console.log("updatedTests : ",updatedTests) ;
     const updatedOrder = {
-      ...AllData.order,
-      tests: AllData.order.tests.map((test) => ({
+      ...AllData.orderNumber,
+      tests: AllData.tests.map((test) => ({
         ...test,
-        barcode: localBarcodes[test._id] || null,
+        tubeId: localBarcodes[test.id] || null,
       })),
     };
 
+   
+      const testsData = updatedTests
+      const AllDataEntupdatedOrder = [{ id: AllData.nationalId , data: updatedOrder }];
+      console.log("AllData.nationalId :",AllData.nationalId)
+      console.log("AllDataEntupdatedOrder ::",AllDataEntupdatedOrder)
+   try {
+  
+      for (const test of testsData) {
+          try {
+              const response = await doApiMethod(`/api/tests/${test.id}/${test.tubeId}`, "PATCH");
 
-    console.log("Updated Tests AAA:", updatedOrder);
+              console.log(`Barcode updated for test ID ${test.id}:`, response.data);
+          } catch (error) {
+              console.error(`Failed to update barcode for test ID ${test.id}:`, error);
+          }
+      }
+      
+      navigate("/SentToLab", { state:  AllDataEntupdatedOrder  });
 
-
-    try {
-      const response = await doApiMethod(`/api/tests/${AllData.order.orderNumber}`,"POST",
-        { tests: updatedOrder.tests }
-      );
-      if (!response.ok) throw new Error("Failed to update order");
-      // setOrderData(response.data);
-    // מעבר לדף הבא 
-      navigate("/SentToLab", { state:  updatedTests  });
-      // alert("הנתונים נשלחו בהצלחה!");
     } catch (error) {
-      console.error("error::",error);
-      console.log("updatedTests :", AllData)
-      navigate("/SentToLab", { state: { order: updatedOrder } });
-      alert("Failed to update order. Check console for details.");
+      alert(error)
     }
+  
   };
 
-  if (!AllData) return <div className=" text-center p-6 styled-frame m-0"> <p>Loading...</p></div>;
-
+  // if (!AllData) return <div className=" text-center p-6 styled-frame m-0"> <p>Loading...</p></div>;
+  if (!AllData) return (
+    <div className="flex justify-center items-center h-screen">
+      <div className="spinner w-16 h-16 border-8"></div>
+    </div>
+  );
   return (
     <div className="container-fluid">
       <div className="container">
@@ -113,24 +130,14 @@ const SummaryPage = () => {
           <div className="d-flex justify-content-center p-5">
             <div className="styled-frame p-5 text-center">
               <h1 className="fw-bold">Order Details</h1>
-              {AllData && AllData.order && AllData.order.patientDetails ? (
+              {AllData && AllData.orderNumber  ? (
                 <>
                   <p>
-                    <strong>Patient Name:</strong>{" "}
-                    {AllData.order.patientDetails.name}
-                  </p>
-                  <p>
-                    <strong>ID:</strong> {AllData.order.patientDetails.id}
-                  </p>
-                  <p>
-                    <strong>Birth Date:</strong>{" "}
-                    {new Date(
-                      AllData.order.patientDetails.birthDate
-                    ).toLocaleDateString()}
+                    <strong>ID:</strong> {AllData.nationalId}                
                   </p>
                   <p>
                     <strong>Order Number:</strong>{" "}
-                    {AllData.order.orderNumber}
+                    {AllData.orderNumber}
                   </p>
                 </>
               ) : (
@@ -142,10 +149,10 @@ const SummaryPage = () => {
           </div>
           <div className="d-flex justify-content-center p-5">
             <div className="WindowGalery">
-              {AllData.order.tests.map((test) => (
+              {AllData.tests.map((test) => (
                 <div
-                  key={test._id}
-                  className="mb-4 p-3"
+                  key={test.id}
+                  className="mb-4 p-3 min-w-[300px]"
                   style={{
                     border: `3px solid ${test.name}`,
                     borderRadius: "10px",
@@ -171,25 +178,38 @@ const SummaryPage = () => {
                     ))}
                   </ul>
                   <div className="d-flex align-items-center mt-3">
-                    <input
-                      type="text"
-                      placeholder="Enter barcode"
-                      className="form-control mt-3"
-                      value={localBarcodes[test._id] || ""}
-                      onChange={(e) =>
-                        handleBarcodeChange(test._id, e.target.value)
-                      }
-                    />
+    
+     
+                  {test.tubeId ? (
+                    <div className=" mb-4 text-center">
+
+                        <h3 className="text-primary"> ברקוד: {test.tubeId}</h3>
+                    </div>
+                 ) : ( 
+<>
+                  <input
+                  type="text"
+                  placeholder="Enter barcode"
+                  className="form-control mt-3"
+                  value={localBarcodes[test.id] || ""}
+                  onChange={(e) =>
+                    handleBarcodeChange(test.id, e.target.value)
+                  }
+                />
                     <button
-                      className="btn btn-secondary mt-3"
-                      onClick={() => handleOpenCamera(test._id)}
-                    >
-                      Scan Barcode
-                    </button>
+                    className="btn btn-secondary mt-3"
+                    onClick={() => handleOpenCamera(test.id)}
+                  >
+                    Scan Barcode
+                  </button>
+                  </>
+
+                 )} 
+
                   </div>
                   {localBarcodes[test._id] && (
                     <p className="text-success mt-2">
-                      Barcode: {localBarcodes[test._id]}
+                      Barcode: {localBarcodes[test.id]}
                     </p>
                   )}
                 </div>
@@ -228,6 +248,3 @@ const SummaryPage = () => {
 };
 
 export default SummaryPage;
-
-
-
